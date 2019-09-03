@@ -20,11 +20,12 @@
 		
 		if ($received_signature !== $generated_signature) 
 		{ 
-			file_put_contents('signature.txt', "No ident received_signature {$received_signature} generated_signature {$generated_signature}");
+		//	file_put_contents('signature.txt', "No ident received_signature {$received_signature} generated_signature {$generated_signature}");
+			die('No ident signature');
 		} 
 		else
 		{ 
-			if($status) {
+			if($status == 'success') {
 				
 				$subject = "no-reply LiqPay"; 
 
@@ -40,6 +41,7 @@
 
 				mail($tomail, $subject, $message, $headers);  
 			}
+			die('ok');
 		}
 	}	  
   ?>
