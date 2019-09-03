@@ -18,7 +18,7 @@
 		$currency            = $decode_data->currency; 
 		
 		
-		if ($received_signature != $generated_signature) 
+		if ($received_signature !== $generated_signature) 
 		{ 
 			file_put_contents('signature.txt', "No ident received_signature {$received_signature} generated_signature {$generated_signature}");
 		} 
